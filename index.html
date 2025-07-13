@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maxenius Inspired Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <nav>
+    <div class="logo-container">
+      <img src="https://www.maxenius.com/_next/static/media/headersupport.8339a637.png" alt="Logo" class="logo" />
+    </div>
+    <ul class="nav-menu">
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Elevate Your Expectations</h1>
+      <p>Hybrid outsourcing with expert developers</p>
+      <a href="#contact" class="cta-button">Book a Call <i class="fas fa-phone"></i></a>
+    </div>
+    <div class="hero-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/3186/3186989.png" alt="Illustration" />
+    </div>
+  </header>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="card"><i class="fas fa-laptop-code"></i><br/>Web Design</div>
+      <div class="card"><i class="fas fa-cogs"></i><br/>Custom Development</div>
+      <div class="card"><i class="fas fa-pencil-ruler"></i><br/>UX/UI Design</div>
+      <div class="card"><i class="fas fa-mobile-alt"></i><br/>Mobile Development</div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>Why Maxenius?</h2>
+    <p>We blend American leadership with Pakistani talent to create innovative, cost-effective digital solutions that exceed expectations.</p>
+  </section>
+
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-box">
+      <p>“Maxenius helped us scale fast with a professional team and seamless delivery.”</p>
+      <span>— Sarah K., Tech Startup Founder</span>
+    </div>
+    <div class="testimonial-box">
+      <p>“Excellent UX design and development. Couldn't have asked for a better partner.”</p>
+      <span>— Ahmed R., Product Manager</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Maxenius Inspired Landing Page</p>
+  </footer>
+
+  <script>
+    const links = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
